@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { css } from '../../node_modules/emotion';
 
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: 'rebeccapurple',
       marginBottom: '1.45rem',
     }}
   >
@@ -19,13 +19,15 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: 'white',
             textDecoration: 'none',
           }}
         >
           {siteTitle}
         </Link>
       </h1>
+      <Link to='/about' className={css({ float: 'right'})}>
+          About
+      </Link>
     </div>
   </div>
 )
