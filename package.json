@@ -4,13 +4,18 @@
   "version": "1.0.0",
   "author": "Harish kumar <harisht@udel.edu>",
   "dependencies": {
+    "emotion": "^9.2.6",
+    "emotion-server": "^9.2.6",
     "gatsby": "^2.0.0-beta.55",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-emotion": "^1.1.17",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.19",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-emotion": "^9.2.6",
     "react-helmet": "^5.2.0",
+    "react-icons": "^2.2.7",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
     "typography-theme-lawton": "^0.15.10"
