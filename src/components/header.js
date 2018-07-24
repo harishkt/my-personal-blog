@@ -1,6 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from '../../node_modules/emotion';
+import { css } from 'react-emotion';
+
+const headerLinks = css({
+  float: 'right',
+  paddingLeft: '10px',
+  paddingRight: '10px'
+});
 
 const Header = ({ siteTitle }) => (
   <div
@@ -25,8 +31,11 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Link to='/about' className={css({ float: 'right'})}>
+      <Link to='/about' className={headerLinks}>
           About
+      </Link>
+      <Link to='/books-i-read' className={headerLinks}>
+          Books
       </Link>
     </div>
   </div>
