@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'react-emotion';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 
@@ -12,7 +11,7 @@ export default ({ data }) => {
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 				<div style={{width: '20%'}}>
 						<a href={link}>
-							<img src={imageUrl} alt="title"/>
+							<img src={imageUrl} alt={title}/>
 						</a>
 					</div>
 					<div style={{width: '80%'}}>
@@ -23,7 +22,7 @@ export default ({ data }) => {
 			</div>
 		);
 	}
-	const bookList = reviews.map(({ book }) =>
+	const BookList = () => reviews.map(({ book }) =>
 		<li key={book.bookID} style={{borderBottom: '4px dotted black'}}>
 			<BookContainer
 				link={book.link}
@@ -36,7 +35,7 @@ export default ({ data }) => {
 		<Layout>
 			<h4> Book Shelf </h4>
 			<ul style={{listStyle: 'none'}}>
-				{bookList}
+				<BookList />
 			</ul>
 		</Layout>
 	);

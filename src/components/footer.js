@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'react-emotion';
 import TwitterIcon from 'react-icons/lib/fa/twitter';
 import GitHubIcon from 'react-icons/lib/fa/github';
-import { Link } from 'gatsby';
+
 
 const footerModule = css({
 	margin: '0 auto',
@@ -20,9 +20,9 @@ const links = {
 const ExternalLink = ({ children, type }) => {
 	const goTo = links[type];
 	return(
-		<Link target="_blank" rel="noopener" onClick={() => window.open(goTo)}>
+		<a href={goTo} target="_blank" rel="noopener noreferrer">
 			{children}
-		</Link>
+		</a>
 	);
 }
 
