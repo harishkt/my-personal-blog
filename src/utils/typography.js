@@ -1,5 +1,7 @@
 import Typography from 'typography'
-import lawtonTheme from 'typography-theme-lawton'
+import youngTheme from 'typography-theme-de-young'
 
-const typography = Typography(lawtonTheme)
+
+const typography = Typography(youngTheme);
+
 export default typography

@@ -3,15 +3,20 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 
 export default ({ data }) => {
-	const { author, category, title, body } = data.contentfulPost;
+	const { date, category, title, body } = data.contentfulPost;
 	console.log(`body is ${JSON.stringify(body)}`);
 	return(
 		<Layout>
 			<div>
 				<h1>{title.title}</h1>
-				<p>Category: {category[0].title}</p>
-				<p>Author: {author[0].name}</p> 
 				<div key= {body.id} dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+				<ul style={{listStyle: 'none', display: 'block'}}>
+					{category.map(({ title }) =>
+						<li style={{display: 'inline-block', boxSizing: 'content-box'}}>
+							{title}
+						</li>)}
+				</ul>
+				<p style={{fontSize: '90%'}}>Posted on {date}</p> 
 			</div>
 		</Layout>
 	)
@@ -20,13 +25,11 @@ export default ({ data }) => {
 export const query = graphql`
  query ($slug: String!) {
 	contentfulPost(slug: {eq: $slug }) {
-		author {
-			name
-		}
 		category {
 			id
 			title
 		}
+		date(formatString: "DD MMMM, YYYY")
 		title {
 			id
 			title

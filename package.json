@@ -24,6 +24,7 @@
     "react-icons": "^2.2.7",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
+    "typography-theme-de-young": "^0.16.9",
     "typography-theme-lawton": "^0.15.10"
   },
   "keywords": [
