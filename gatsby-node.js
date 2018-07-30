@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
 			}
 		`).then(result => {
 			const edges = result.data.allContentfulPost.edges;
-			// createCategoryPages(createPage, edges);
+			createCategoryPages(createPage, edges);
 			edges.forEach(({ node }) => {
 				createPage({
 					path: node.slug,

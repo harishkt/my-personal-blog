@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 export default ({ data }) => {
 	const { date, category, title, body } = data.contentfulPost;
@@ -12,9 +12,12 @@ export default ({ data }) => {
 				<div key= {body.id} dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
 				<ul style={{listStyle: 'none', display: 'block'}}>
 					{category.map(({ title }) =>
-						<li style={{display: 'inline-block', boxSizing: 'content-box'}}>
-							{title}
-						</li>)}
+						<Link to={`/category/${title}`} exact = {true} >
+							<li style={{display: 'inline-block', boxSizing: 'content-box'}}>
+								{title}
+							</li>
+						</Link>
+					)}
 				</ul>
 				<p style={{fontSize: '90%'}}>Posted on {date}</p> 
 			</div>
