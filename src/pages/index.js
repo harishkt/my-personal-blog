@@ -1,13 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'react-emotion';
 import Layout from '../components/layout'
 import ArticleSummary from '../components/article-summary';
 
+const ArticlesContainer = styled('div')`
+	display: block;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 20px;
+`;
 const IndexPage = ({ data }) => {
 	const edges = data.allContentfulPost.edges;
-	const articleList = edges.map(({ node }) => (
+	const ArticleList = () => edges.map(({ node }, index) => (
 			<ArticleSummary
-				key={node.body.id}
+				id={node.body.id}
+				key={index}
 				path={node.slug}
 				title={node.title.title}
 				excerpt={node.body.childMarkdownRemark.excerpt}
@@ -15,7 +23,9 @@ const IndexPage = ({ data }) => {
 	));
 	return(
 		<Layout>
-			{articleList}
+			<ArticlesContainer>
+				<ArticleList />
+			</ArticlesContainer>
 		</Layout>
 	)
 	

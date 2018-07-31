@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
-import { css } from 'react-emotion';
+import styled from 'react-emotion';
 
 import Header from './header';
 import Footer from './footer';
 
-const contentSection = css({
+const ContentSection = styled('div')({
 	margin: '0 auto',
 	maxWidth: 960,
 	padding: '0px 1.0875rem 1.45rem',
@@ -29,16 +29,14 @@ const Layout = ({ children }) => (
 				<Helmet
 					title={data.site.siteMetadata.title}
 					meta={[
-						{ name: 'description', content: 'Sample' },
-						{ name: 'keywords', content: 'sample, something' },
+						{ name: 'description', content: 'Personal Bloh' },
+						{ name: 'keywords', content: 'learning, javascript, nodejs, react' },
 					]}
 				/>
 				<Header siteTitle={data.site.siteMetadata.title} />
-				<div
-					className={contentSection}
-				>
-					{children}
-				</div>
+				<ContentSection>
+					{children} 
+				</ContentSection>
 				<Footer />
 			</div>
 		)}

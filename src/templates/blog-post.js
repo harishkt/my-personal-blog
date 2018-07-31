@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Article from '../components/article';
 
 export default ({ data }) => {

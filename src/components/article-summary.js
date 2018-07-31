@@ -1,13 +1,32 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'react-emotion';
 
-export default ({ key, path, title, excerpt }) => (
-	<div key={key}>
+const ArticleSummary = styled('div')`
+	margin-bottom: 20px;
+	display: block;
+	&:hover {
+		background-color: #fff8ff;
+
+	}
+`;
+
+const ArticleHeading = styled('h3')`
+	font-size: 180%;
+	margin-bottom: 10px;
+	display: block;
+`;
+const ArticleExcerpt = styled('div')`
+	font-style: italic;
+`;
+
+export default ({ id, path, title, excerpt }) => (
+	<ArticleSummary id={id}>
 		<Link
 			to={path}
 		>
-		<h3>{title}</h3>
+		<ArticleHeading>{title}</ArticleHeading>
 		</Link>
-		<div>{excerpt}</div>
-	</div>
+		<ArticleExcerpt>{excerpt}</ArticleExcerpt>
+	</ArticleSummary>
 )
