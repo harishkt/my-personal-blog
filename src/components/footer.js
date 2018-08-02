@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 import TwitterIcon from 'react-icons/lib/fa/twitter';
 import GitHubIcon from 'react-icons/lib/fa/github';
 import Contentful from '../images/logos/contentful-logo.png';
