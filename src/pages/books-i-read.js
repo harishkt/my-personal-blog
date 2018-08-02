@@ -10,12 +10,12 @@ export default ({ data }) => {
 		return(
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 				<div style={{width: '20%'}}>
-						<a href={link}>
+						<a href={link} target="_blank" rel="noopener noreferrer">
 							<img src={imageUrl} alt={title}/>
 						</a>
 					</div>
 					<div style={{width: '80%'}}>
-						<a href={link}>
+						<a href={link} target="_blank" rel="noopener noreferrer">
 							<h3>{title}</h3>
 						</a>
 					</div>
