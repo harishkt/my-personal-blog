@@ -12,7 +12,7 @@ const ArticlesContainer = styled('div')`
 `;
 const IndexPage = ({ data }) => {
 	const edges = data.allContentfulPost.edges;
-	const ArticleList = () => edges.map(({ node }, index) => (
+	const ArticlesList = () => edges.map(({ node }, index) => (
 			<ArticleSummary
 				id={node.body.id}
 				key={index}
@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
 	return(
 		<Layout>
 			<ArticlesContainer>
-				<ArticleList />
+				<ArticlesList />
 			</ArticlesContainer>
 		</Layout>
 	)
