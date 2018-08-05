@@ -7,6 +7,7 @@ const ArticleSummary = styled('div')`
 	display: block;
 	&:hover {
 		background-color: #fff8ff;
+		font-size: 120%;
 
 	}
 `;
