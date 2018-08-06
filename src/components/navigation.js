@@ -7,8 +7,8 @@ import { home } from 'react-icons-kit/icomoon/home';
 import { Icon } from 'react-icons-kit';
 
 const NavContainer = styled("div")`
-	margin-top: 25px;
-	float: right;
+	margin-top: 15px;
+	float: left;
 	display: block;
 	justify-content: center;
 	width: 15%;
