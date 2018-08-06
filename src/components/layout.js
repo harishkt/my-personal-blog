@@ -6,6 +6,7 @@ import styled from 'react-emotion';
 
 import Header from './header';
 import Footer from './footer';
+import Navigation from './navigation';
 
 const ContentSection = styled('div')({
 	margin: '0 auto',
@@ -33,6 +34,7 @@ const Layout = ({ children }) => (
 						{ name: 'keywords', content: 'Learning javascript, nodejs, react & rust' },
 					]}
 				/>
+				<Navigation />
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<ContentSection>
 					{children} 

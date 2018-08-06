@@ -31,12 +31,6 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Link to='/about' className={headerLinks}>
-          About
-      </Link>
-      <Link to='/books-i-read' className={headerLinks}>
-          Books
-      </Link>
     </div>
   </div>
 )
