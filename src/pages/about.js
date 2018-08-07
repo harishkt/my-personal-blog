@@ -29,7 +29,8 @@ export default () => (
 				<ul style={{listStyle: 'none'}}>
 					<li>Languages: JavaScript, Java, Ruby & Scala</li>
 					<li>Frameworks: React, Gatsby</li>
-					<li>Run time Environments: Nodejs</li>
+					<li>JS Run time: Nodejs</li>
+					<li>Currently learning: Rust</li>
 				</ul>
 			</aside>
 		</div>

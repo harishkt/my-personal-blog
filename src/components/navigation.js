@@ -4,6 +4,11 @@ import { Link } from 'gatsby';
 import { menu } from 'react-icons-kit/icomoon/menu';
 import { cross } from 'react-icons-kit/icomoon/cross';
 import { home } from 'react-icons-kit/icomoon/home';
+import { books } from 'react-icons-kit/icomoon/books'
+import { ic_code } from 'react-icons-kit/md/ic_code';
+import { fileDirectory } from 'react-icons-kit/oct/fileDirectory';
+import { project } from 'react-icons-kit/iconic/project';
+import { person } from 'react-icons-kit/iconic/person';
 import { Icon } from 'react-icons-kit';
 
 const NavContainer = styled("div")`
@@ -51,6 +56,8 @@ const NavigationItem = styled("li")`
 	&:hover {
 		background-color: #fff8ff;
 		font-size: 120%;
+		text-decoration: none;
+		text-decoration-line: none;
 
 	}
 `;
@@ -74,8 +81,8 @@ export default class Navigation extends Component {
 	render() {
 		const { isToggleOn } = this.state;
 		const showButtonContents = isToggleOn ?
-			<Icon size={40} color="choclate" icon={cross}/>
-			: <Icon size={40} color="choclate" icon={menu}/>;
+			<Icon size={24} color="choclate" icon={cross}/>
+			: <Icon size={36} icon={menu}/>;
 		return(
 			<NavContainer>
 				<ButtonStyle onClick={this.handleToggle}>
@@ -91,8 +98,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-							<Icon size={24} icon={home} />
-							<div style={{display: 'inline'}}>Home</div>
+							<Icon size={36} icon={ home } />
 							</Link>
 						</NavigationItem>
 						<NavigationItem>
@@ -102,7 +108,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-								Category
+								<Icon size={36} icon={ fileDirectory } />
 							</Link>
 						</NavigationItem>
 						<NavigationItem>
@@ -112,7 +118,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-								Book Shelf
+								<Icon size={36} icon={ books } />
 							</Link>
 						</NavigationItem>
 						<NavigationItem>
@@ -122,7 +128,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-								Code Snippets
+								<Icon size={36} icon={ ic_code } />
 							</Link>
 						</NavigationItem>
 						<NavigationItem>
@@ -132,7 +138,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-								Projects
+							<Icon size={36} icon={ project } />
 							</Link>
 						</NavigationItem>
 						<NavigationItem>
@@ -142,7 +148,7 @@ export default class Navigation extends Component {
 									textDecoration: 'none',
 								}}
 							>
-								About
+							<Icon size={36} icon={ person } />
 							</Link>
 						</NavigationItem>
 					</NavigationList>
