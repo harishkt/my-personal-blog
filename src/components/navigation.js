@@ -107,7 +107,7 @@ export default class Navigation extends Component {
 						</NavigationItem>
 						<NavigationItem>
 							<Link
-								to="/books-i-read"
+								to="/book-shelf"
 								style={{
 									textDecoration: 'none',
 								}}
