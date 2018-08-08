@@ -10,7 +10,6 @@ const CategoryHeading = styled('div')`
 	margin: 0 auto;
 	font-size: 200%;
 	text-align: center;
-	vertical-align: middle;
 	display: block;
 `;
 const ArticlesContainer = styled('div')`
@@ -27,17 +26,9 @@ export default (({ data, pageContext }) => {
 	const categoryNeeded = pageContext.title;
 	const edges = data.allContentfulPost.edges;
 	const postsByCategory = edges.filter(edge => edge.node.category[0].title === categoryNeeded);
-	const logo = postsByCategory[0].node.category[0].icon || null;
-	let iconLogo = null;
-	if (logo) {
-		iconLogo = <Img fluid={logo.fluid}
-			alt={"Logo"}
-			fadeIn={true}
-			outerWrapperClassName={outerImageWrap}
-			style={{ width: '40px', height: '40px'}}
-		/>
-	}
-	const articleList = postsByCategory.map(({ node }, index) => (
+	const logo = postsByCategory[0].node.category[0].icon;
+	
+	const ArticleList = () => postsByCategory.map(({ node }, index) => (
 			<ArticleSummary
 				id={node.body.id}
 				key={index}
@@ -51,9 +42,16 @@ export default (({ data, pageContext }) => {
 		<Layout>
 			<CategoryHeading>
 				<div style ={{display: 'inline-block'}}> {capitalize(categoryNeeded)} posts </div>
-				{iconLogo}
+				<Img fluid={logo.fluid}
+					alt={"Logo"}
+					fadeIn={true}
+					outerWrapperClassName={outerImageWrap}
+					style={{ width: '40px', height: '40px'}}
+				/>
 			</CategoryHeading>
-			<ArticlesContainer>{articleList}</ArticlesContainer>
+			<ArticlesContainer>
+				<ArticleList />
+			</ArticlesContainer>
 		</Layout>
 	);
 })

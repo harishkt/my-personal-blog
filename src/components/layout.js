@@ -6,14 +6,14 @@ import styled from 'react-emotion';
 
 import Header from './header';
 import Footer from './footer';
-import Navigation from './navigation';
 
 const ContentSection = styled('div')({
 	margin: '0 auto',
 	maxWidth: 960,
 	padding: '0px 1.0875rem 1.45rem',
 	paddingTop: 0,
-})
+});
+
 const Layout = ({ children }) => (
 	<StaticQuery
 		query={graphql`
@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
 						{ name: 'keywords', content: 'Learning javascript, nodejs, react & rust' },
 					]}
 				/>
-				<Navigation />
+				
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<ContentSection>
 					{children} 

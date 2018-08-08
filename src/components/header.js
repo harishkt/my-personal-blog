@@ -1,20 +1,27 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
+import styled from 'react-emotion';
+
+import NavigationList from './navigation';
+
+
+const TitleContainer = styled('div')`
+	margin: 0 auto;
+	width: 85%;
+	padding: 1.45rem 1.0875rem;
+	display: inline-block;
+`;
+
+const HeaderText = styled('h1')`
+	margin: 0 auto;
+	align-content: center;
+`;
 
 const Header = ({ siteTitle }) => (
-	<div
-		style={{
-			marginBottom: '1.45rem',
-		}}
-	>
-		<div
-			style={{
-				margin: '0 auto',
-				maxWidth: 960,
-				padding: '1.45rem 1.0875rem',
-			}}
-		>
-			<h1 style={{ margin: 0 }}>
+	<Fragment>
+		<NavigationList />
+		<TitleContainer>
+			<HeaderText>
 				<Link
 					to="/"
 					style={{
@@ -23,9 +30,9 @@ const Header = ({ siteTitle }) => (
 				>
 					{siteTitle}
 				</Link>
-			</h1>
-		</div>
-	</div>
+				</HeaderText>
+			</TitleContainer>
+	</Fragment>
 )
 
 export default Header

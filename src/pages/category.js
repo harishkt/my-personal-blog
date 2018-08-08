@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import Img from 'gatsby-image';
 
 import { capitalize } from '../utils/other-utils';
@@ -17,10 +17,15 @@ const CategoryContainer = styled('div')`
 	margin-right: 20px;
 	width: 100%;
 	:hover {
-		width: 120%;
-		font-size: 120%;
+		
+		font-size: 110%;
 	}
 `;
+const ImageClassName = css({
+	width: '300px',
+	height: '300px',
+	webkitTransform: `translate3d(0,0,0)`
+});
 
 export default ({ data }) => {
 	const { edges } = data.allContentfulCategory;
@@ -28,7 +33,6 @@ export default ({ data }) => {
 		const { fluid } = node.icon;
 		const { title } = node;
 		const { excerpt } = node.shortDescription.childMarkdownRemark;
-		// style={{ width: '40px', height: '40px'}}
 		return(
 			<Link to={`category/${title}`}>
 				<CategoryContainer key={index}>
@@ -36,13 +40,12 @@ export default ({ data }) => {
 				<Img fluid={fluid}
 					alt={"Logo"}
 					fadeIn={true}
-					style={{ width: '300px', height: '300px'}}
+					className={ImageClassName}
 				/>
 				<p>{excerpt}</p>
 				</CategoryContainer>
 			</Link>
-			
-		)
+		);
 	})
 	return(
 		<Layout>
@@ -57,37 +60,30 @@ export default ({ data }) => {
 export const query = graphql`
 	query {
 		allContentfulCategory {
-	  edges {
-		node {
-		  title
-		  icon {
-				fluid {
-					src
-					srcSet
-					aspectRatio
-					sizes
-				}
-				fixed {
-					width
-					height
-					base64
-					src
-					srcSet
+		edges {
+			node {
+				title
+				icon {
+					fluid {
+						src
+						srcSet
+						aspectRatio
+						sizes
 					}
 				}
-			id
-			title
-		  post {
-			id
-		  }
-		  shortDescription {
-			id
-			childMarkdownRemark {
-				excerpt
-				html
+				id
+				title
+				post {
+					id
+				}
+				shortDescription {
+					id
+					childMarkdownRemark {
+						excerpt
+						html
+					}
+				}
 			}
-			}
-		}
 		}
 	}
 }

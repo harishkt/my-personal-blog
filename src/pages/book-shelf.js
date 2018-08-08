@@ -42,18 +42,18 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-query goodRead {
-	goodreadsShelf {
-		id
-		reviews {
-			reviewID
-			book {
-				bookID
-				link
-				title
-				imageUrl
+	query goodRead {
+		goodreadsShelf {
+			id
+			reviews {
+				reviewID
+				book {
+					bookID
+					link
+					title
+					imageUrl
+				}
 			}
 		}
 	}
-}
 `;
